@@ -1,0 +1,44 @@
+﻿@model ProyectoContact.Models.Contacto
+
+@{
+    ViewBag.Title = "Editar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Editar</h2>
+
+<div class="row" style="margin-top:38px">
+
+    <div class="col-sm-12">
+        <div class="panel-body panel-warning">
+            <div class="panel-heading">
+                <h4>Nuevo contacto</h4>
+            </div>
+            <div class="panel-body">
+                <form action="@Url.Action("Editar","Contacto")" method="post">
+                    <input type="hidden" class="form-control" name="IdContacto" value="@Html.DisplayTextFor(m=>m.IdContacto)" >
+                    <div class="mb-3">
+                        <label class="form-label">Nombre</label>
+                        <input type="text" class="form-control" name="Nombre" value="@Html.DisplayTextFor(m=>m.Nombre)">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Apellido</label>
+                        <input type="text" class="form-control" name="Apellido" value="@Html.DisplayTextFor(m=>m.Apellido)">
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Telefono</label>
+                        <input type="text" class="form-control" name="Telefono" value="@Html.DisplayTextFor(m=>m.Telefono)">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Correo</label>
+                        <input type="text" class="form-control" placeholder="" name="Correo" value="@Html.DisplayTextFor(m=>m.Correo)">
+                    </div>
+
+                    <button type="submit" class="btn-primary btn">Actualizar</button>
+                    <a href="@Url.Action("Index","Contacto")" class="btn btn-warning"><i class="fa-solid fa-arrow-rotate-left"></i>Volver</a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
